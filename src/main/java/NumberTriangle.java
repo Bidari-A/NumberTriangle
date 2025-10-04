@@ -88,7 +88,7 @@ public class NumberTriangle {
      *
      */
     public int retrieve(String path) {
-        // TODO implement this method
+        // Done implement this method
         if (path == null) {
             throw new NullPointerException("path is null");
         }
