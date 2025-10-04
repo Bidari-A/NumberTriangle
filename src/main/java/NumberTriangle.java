@@ -89,9 +89,30 @@ public class NumberTriangle {
      */
     public int retrieve(String path) {
         // TODO implement this method
-        return -1;
-    }
+        if (path == null) {
+            throw new NullPointerException("path is null");
+        }
+        if (path.isEmpty()) {
+            return this.root;
+        }
+        //variable to keep track
+        char step = path.charAt(0);
+        String rest = path.substring(1);
+        NumberTriangle next;
+        if (step == 'l') {
+            next = this.left;
+        }
+        // if not then it's right
+        else {
+            next = this.right;
+        }
+        //missing child
+        if (next == null) {
+            throw new IllegalStateException("Missing child for this path");
+        }
 
+        return next.retrieve(rest);
+    }
     /** Read in the NumberTriangle structure from a file.
      *
      * You may assume that it is a valid format with a height of at least 1,
