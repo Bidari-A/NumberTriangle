@@ -141,8 +141,6 @@ public class NumberTriangle {
         String line = br.readLine();
         while (line != null) {
 
-            //remove when done; this line is included so running starter code prints the contents of the file
-            System.out.println(line);
 
             // Done: process the line
             String[] parts = line.trim().split("\\s+");
